@@ -1,2 +1,2 @@
 #!/bin/bash
-cat | egrep '[13579]$'
+cat | cut -f 2 | egrep '[13579]$'
