@@ -16,8 +16,8 @@ content => 'Holberton School',
 }
 
 file_line { 'Add redirection, 301':
-path   => '/etc/nginx/sites-available/default',
 ensure => 'present',
+path   => '/etc/nginx/sites-available/default',
 after  => 'listen 80 default_server',
 line   => 'rewrite ^/redirect_me http://www.staggeringbeauty.com/;',
 }
