@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-01 server home dir
+# name of file to tranfer is currently ./3-redirection
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 3-redirection 34.74.73.44 ubuntu ~/.ssh/holberton
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton './3-redirection'
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton 'rm 3-redirection'

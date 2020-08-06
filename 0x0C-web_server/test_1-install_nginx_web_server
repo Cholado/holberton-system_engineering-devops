@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-01 server home dir
+# name of file to tranfer is currently ./1-install_nginx_web_server
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 1-install_nginx_web_server 34.74.73.44 ubuntu ~/.ssh/holberton
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton './1-install_nginx_web_server'
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton 'rm 1-install_nginx_web_server'

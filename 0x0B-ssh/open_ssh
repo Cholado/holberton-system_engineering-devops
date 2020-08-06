@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# test 2 open ssh server no passwd, not quite working tho
+
+ssh -v ubuntu@34.74.73.44
