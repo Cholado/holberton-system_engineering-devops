@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-02 server home dir
+# name of file to tranfer is currently 4-not_found_page_404
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 4-not_found_page_404 54.147.176.180 ubuntu ~/.ssh/holberton
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton './4-not_found_page_404'
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton 'rm 4-not_found_page_404'

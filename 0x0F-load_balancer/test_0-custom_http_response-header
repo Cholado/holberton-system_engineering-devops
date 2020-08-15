@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-02 server home dir
+# name of file to tranfer is currently 0-custom_http_response-header
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 0-custom_http_response-header 54.147.176.180 ubuntu ~/.ssh/holberton
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton './0-custom_http_response-header'
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton 'rm 0-custom_http_response-header'

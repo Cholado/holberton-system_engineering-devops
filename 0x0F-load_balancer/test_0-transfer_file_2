@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-01 server home dir
+# name of file to tranfer is currently some_page.html
+
+./0-transfer_file  some_page.html 34.74.73.44 ubuntu ~/.ssh/holberton
