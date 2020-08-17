@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-02 server home dir
+# name of file to tranfer is currently 2-purge_nginx
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 2-purge_nginx 54.147.176.180 ubuntu ~/.ssh/holberton
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton './2-purge_nginx'
+ssh ubuntu@54.147.176.180 -i ~/.ssh/holberton 'rm 2-purge_nginx'

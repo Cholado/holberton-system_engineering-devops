@@ -5,28 +5,30 @@
 # have a custom 404 page that contains the string Ceci n'est pas une page.
 
 sudo apt-get update
+sudo apt-get -y upgrade
 sudo apt-get install -y nginx
+sudo service nginx start
 
 sudo mkdir -p /var/www/html
 sudo touch /var/www/html/index.html
-sudo echo "Holberton School" > /var/www/html/index.html
-sudo touch /var/www/html/404.html
-sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
+echo "Holberton School" | sudo tee /var/www/html/index.html
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
 
-sudo printf %s "server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By $HOSTNAME;
-    root   /var/www/html;
-    index  index.html index.htm;
-    location /redirect_me {
-        return 301 http://www.staggeringbeauty.com/;
+printf %s "server {
+     listen      80 default_server;
+     listen      [::]:80 default_server;
+     add_header X-Served-By $HOSTNAME;
+     root        /var/www/html;
+     index       index.html index.htm;
+     location /redirect_me {
+     	      return 301 http://www.staggeringbeauty.com/;
+	      }
+     error_page 404 /404.html;
+     location /404 {
+       root /var/www/html;
+       internal;
     }
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-    }
-}" > /etc/nginx/sites-available/default
-
-service nginx restart
+}
+" | sudo tee /etc/nginx/sites-available/default
+sudo service nginx restart
