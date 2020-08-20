@@ -34,7 +34,7 @@ backend www-backend
     balance  roundrobin
     redirect scheme https if !{ ssl_fc }
     server 1628-web-01 34.74.73.44:80 check
-    server 375-web-02 54.147.176.180:80 check
+    server 1628-web-02 54.147.176.180:80 check
 
 backend letsencrypt-backend
     server letsencrypt 127.0.0.1:54321
