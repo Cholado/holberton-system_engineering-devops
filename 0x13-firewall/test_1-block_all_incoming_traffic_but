@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# use the transfer file script in my 1628-web-01 server home dir
+# name of file to tranfer is currently 1-block_all_incoming_traffic_but
+# execute the file to test if it works
+# after install deletes the file
+
+./0-transfer_file 1-block_all_incoming_traffic_but 34.74.73.44 ubuntu ~/.ssh/holberton
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton './1-block_all_incoming_traffic_but'
+ssh ubuntu@34.74.73.44 -i ~/.ssh/holberton 'rm 1-block_all_incoming_traffic_but'
